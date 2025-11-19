@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jasa Boga Higienist</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>Jasa Boga Higienist</h1>
+    </header>
+
+    <!-- NAVBAR STICKY -->
+    <nav class="nav sticky">
+      <a href="#nasi-box">Menu</a>
+      <a href="#snack">Snack Box</a>
+      <a href="#order-form">Pesan</a>
+      <a href="#kontak">Kontak</a>
+      <button class="mode-btn" onclick="toggleMode()">SERTIFIKASI HALAL</button>
+    </nav>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="img/banner.jpg" alt="Banner Catering" />
+      <a href="#order-form" class="cta-btn">Pesan Sekarang</a>
+    </div>
+
+    <!-- SNACK BOX -->
+    <h2 id="snack">Paket Snack Box</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="img/snack10rb.jpg" alt="Snack Box A" />
+        <h3>Snack Box A</h3>
+        <p>3 macam kue</p>
+        <p>Harga: <b>Rp 8.000</b></p>
+      </div>
+      <div class="menu-card">
+        <img src="img/snack10rban.jpg" alt="Snack Box B" />
+        <h3>Snack Box B</h3>
+        <p>4 macam kue + air mineral</p>
+        <p>Harga: <b>Rp 10.000</b></p>
+      </div>
+      <div class="menu-card">
+        <img src="img/snack15rb.jpg" alt="Snack Box C" />
+        <h3>Snack Box C</h3>
+        <p>5 macam kue + air mineral</p>
+        <p>Harga: <b>Rp 15.000</b></p>
+      </div>
+    </div>
+
+    <!-- NASI BOX -->
+    <h2 id="nasi-box">Paket Nasi Box Premium</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="img/menu10rbfb.jpg" alt="Paket Nasi Box A" />
+        <h3>Paket Nasi Box A</h3>
+        <p>Aneka ricebowl, By Request</p>
+        <p>Harga: <b>Rp 10.000</b></p>
+      </div>
+      <div class="menu-card">
+        <img src="img/nasiayamserundeng.jpg" alt="Paket Nasi Box B" />
+        <h3>Paket Nasi Box B</h3>
+        <p>Nasi, Lauk, Sayur Pendamping, Krupuk</p>
+        <p>Harga: <b>Rp 15.000</b></p>
+      </div>
+      <div class="menu-card">
+        <img src="img/nasimenu20rb.jpg" alt="Paket Nasi Box C" />
+        <h3>Paket Nasi Box C</h3>
+        <p>Nasi, Lauk Utama, Lauk Pendamping, Sayur, Buah/Puding</p>
+        <p>Harga: <b>Rp 20.000</b></p>
+      </div>
+      <div class="menu-card">
+        <img src="img/nasibesekbambu1.jpg" alt="Paket Nasi Box D" />
+        <h3>Paket Nasi Box D</h3>
+        <p>Nasi Liwet/Nasi daun Jeruk - Lauk, sayur, sambal, Peyek</p>
+        <p>Harga: <b>Rp 25.000</b></p>
+      </div>
+    </div>
+
+    <!-- PROMO -->
+    <h2>Promo Spesial</h2>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <p>✨ FREE DELIVERY ORDER</p>
+        <p>✨ BONUS 1 BOX UNTUK MINIMAL 75 BOX</p>
+      </div>
+    </div>
+
+    <!-- FORM PEMESANAN -->
+    <div id="order-form">
+      <h2>Form Pemesanan</h2>
+      <label>Nama Pemesan</label>
+      <input type="text" id="nama" placeholder="Nama Anda" />
+      <label>Paket Catering</label>
+      <select id="paket" onchange="updateHarga()">
+        <option value="Paket SNACK A" data-harga="8000">
+          Paket SNACK A - Rp 8.000
+        </option>
+        <option value="Paket SNACK B" data-harga="10000">
+          Paket SNACK B - Rp 10.000
+        </option>
+        <option value="Paket SNACK C" data-harga="15000">
+          Paket SNACK C - Rp 15.000
+        </option>
+        <option value="Paket NASI BOX A" data-harga="10000">
+          Paket NASI BOX A - Rp 10.000
+        </option>
+        <option value="Paket NASI BOX B" data-harga="15000">
+          Paket NASI BOX B - Rp 15.000
+        </option>
+        <option value="Paket NASI BOX C" data-harga="20000">
+          Paket NASI BOX C - Rp 20.000
+        </option>
+        <option value="Paket NASI BOX D" data-harga="25000">
+          Paket NASI BOX D - Rp 25.000
+        </option>
+      </select>
+      <label>Jumlah Pesanan (pax)</label>
+      <input
+        type="number"
+        id="jumlah"
+        min="1"
+        value="1"
+        oninput="updateTotal()"
+      />
+      <label>Catatan</label>
+      <textarea
+        id="catatan"
+        placeholder="Permintaan khusus (opsional)"
+      ></textarea>
+      <label>Total Harga</label>
+      <input type="text" id="total" readonly />
+      <button class="cta-btn" onclick="kirimWA()">Kirim ke WhatsApp</button>
+    </div>
+
+    <!-- WA FLOATING -->
+    <a class="wa-gold" href="https://wa.me/62895631263868" target="_blank"
+      >💬</a
+    >
+
+    <!-- TENTANG -->
+    <h2 id="tentang">Tentang Saya</h2>
+    <div class="tentang-container">
+      <p><b>Alamat Produksi:</b> Jl. Contoh No. 123, Kota Contoh, Indonesia</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.5597909875414!2d110.41992729999998!3d-7.836325599999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57678b4c4f5f%3A0x5dda770c04854b3c!2sCabang%20Wajik%20Bakar%20Bu%20Agus!5e0!3m2!1sen!2sid!4v1763546743987!5m2!1sen!2sid"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="kontak">
+      <h2>Kontak Kami</h2>
+      <div class="kontak-box">
+        <p><b>WhatsApp:</b> 0895-6312-63868</p>
+      </div>
+      <div class="kontak-box">
+        <p><b>Instagram:</b> @luciana_leeta</p>
+      </div>
+      <p>Catering Jasa Boga Higienist corp</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+      function toggleMode() {
+        document.body.classList.toggle("dark-gold");
+      }
+      function updateHarga() {
+        let paket = document.getElementById("paket");
+        let harga = parseInt(
+          paket.options[paket.selectedIndex].getAttribute("data-harga")
+        );
+        let jumlah = parseInt(document.getElementById("jumlah").value) || 1;
+        document.getElementById("total").value = harga * jumlah;
+      }
+      function updateTotal() {
+        updateHarga();
+      }
+      function kirimWA() {
+        let nama = document.getElementById("nama").value;
+        let paket = document.getElementById("paket").value;
+        let jumlah = document.getElementById("jumlah").value;
+        let catatan = document.getElementById("catatan").value;
+        let total = document.getElementById("total").value;
+        let wa = "62895631263868";
+        let pesan = `Halo, saya ingin memesan catering:\nNama: ${nama}\nMenu: ${paket}\nJumlah: ${jumlah} pax\nCatatan: ${catatan}\nTotal: Rp ${total}`;
+        let url = "https://wa.me/" + wa + "?text=" + encodeURIComponent(pesan);
+        window.open(url, "_blank");
+      }
+      updateHarga();
+    </script>
+  </body>
+</html>
