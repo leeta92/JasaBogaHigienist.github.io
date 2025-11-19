@@ -1,0 +1,205 @@
+/* RESET & BASIC */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background: #fff6e0;
+    color: #5a3e00;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f2e7;
+}
+
+/* NAVBAR */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #cba135;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav a,
+.nav button {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav a:hover,
+.nav button:hover {
+    background-color: #d4af37;
+}
+
+/* MODE BUTTON */
+.mode-btn {
+    background-color: #d4af37;
+}
+
+/* BANNER */
+.banner {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s;
+}
+
+.banner img:hover {
+    transform: scale(1.05);
+}
+
+.cta-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cba135;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #d4af37;
+}
+
+/* MENU GRID */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.menu-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #fff6e0;
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* FORM PEMESANAN */
+#order-form {
+    padding: 20px;
+}
+
+#order-form input,
+#order-form select,
+#order-form textarea,
+#order-form button {
+    width: 100%;
+    margin: 5px 0 15px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+#order-form input:focus,
+#order-form select:focus,
+#order-form textarea:focus {
+    border-color: #cba135;
+}
+
+#order-form button:hover {
+    background-color: #d4af37;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    background-color: #cba135;
+    color: white;
+    text-align: center;
+}
+
+/* WA FLOATING */
+.wa-gold {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 35px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.wa-gold:hover {
+    transform: scale(1.2);
+}
+
+/* MEDIA QUERY HP */
+@media(max-width:600px) {
+    .nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .cta-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    #order-form input,
+    #order-form select,
+    #order-form textarea,
+    #order-form button {
+        font-size: 14px;
+    }
+}
+
+/* DARK GOLD MODE */
+.dark-gold {
+    background-color: #f7f2e7;
+    color: #5a3e00;
+}
+
+.dark-gold header,
+.dark-gold footer,
+.dark-gold .nav,
+.dark-gold .menu-card,
+.dark-gold .cta-btn,
+.dark-gold .mode-btn {
+    background-color: #d4af37;
+    color: white;
+}
